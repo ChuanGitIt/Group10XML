@@ -1,9 +1,9 @@
 <!DOCTYPE car [
 <!ELEMENT car (ClassicCar*,ECar*)>
 <!ELEMENT ClassicCar (car.types,car.brand,car.model,car.licensePlate,car.year,
-car.status,car.location,car.fuelLevel,ClassicCar.fuel,ClassicCar.fuelCard)>
+car.status,car.location,car.fuelLevel,car.pricePerDay,ClassicCar.fuel,ClassicCar.fuelCard)>
 <!ELEMENT ECar (car.types,car.brand,car.model,car.licensePlate,car.year,
-car.status,car.location,car.fuelLevel,ECar.battery,ECar.chargerCard,ECar.chargerType)>
+car.status,car.location,car.fuelLevel,car.pricePerDay,ECar.battery,ECar.chargerCard,ECar.chargerType)>
 
 <!ATTLIST ClassicCar carID CDATA #REQUIRED>
 <!ATTLIST ECar carID CDATA #REQUIRED>
@@ -15,6 +15,7 @@ car.status,car.location,car.fuelLevel,ECar.battery,ECar.chargerCard,ECar.charger
   <!ELEMENT car.status (#PCDATA)>
   <!ELEMENT car.location (#PCDATA)>
   <!ELEMENT car.fuelLevel (#PCDATA)>
+  <!ELEMENT car.pricePerDay (#PCDATA)>
   
   <!ELEMENT ClassicCar.fuel (#PCDATA)>
   <!ELEMENT ClassicCar.fuelCard (#PCDATA)>
@@ -34,8 +35,23 @@ car.status,car.location,car.fuelLevel,ECar.battery,ECar.chargerCard,ECar.charger
   <car.status> "Nice condition, clean and spacious room"</car.status>
   <car.location> "Dublin City Centre" </car.location>
   <car.fuelLevel> "23.3 – 26.2 mpg" </car.fuelLevel>
+  <car.pricePerDay> 100 </car.pricePerDay>
   <ClassicCar.fuel> "Petrol" </ClassicCar.fuel>
   <ClassicCar.fuelCard> "001" </ClassicCar.fuelCard>
+</ClassicCar>
+
+<ClassicCar carID = "002">
+  <car.types> "Sedan" </car.types>
+  <car.brand> "Toyota"</car.brand>
+  <car.model> "Corolla" </car.model>
+  <car.licensePlate> "Im Toyota" </car.licensePlate>
+  <car.year> 2000 </car.year>
+  <car.status> "Pretty good, suitable for less than 4 people" </car.status>
+  <car.location> "Trinity" </car.location>
+  <car.fuelLevel> "1.2T Hybrid"</car.fuelLevel>
+  <car.pricePerDay> 10 </car.pricePerDay>
+  <ClassicCar.fuel> "Diesel" </ClassicCar.fuel>
+  <ClassicCar.fuelCard> "002" </ClassicCar.fuelCard>
 </ClassicCar>
 
 <ECar carID = "101">
@@ -47,6 +63,7 @@ car.status,car.location,car.fuelLevel,ECar.battery,ECar.chargerCard,ECar.charger
   <car.status> "Battery is in perfect shape" </car.status>
   <car.location> "Dublin Airport" </car.location>
   <car.fuelLevel> "17.3 kWh/100km" </car.fuelLevel>
+  <car.pricePerDay> 30 </car.pricePerDay>
   <ECar.battery> "514 km" </ECar.battery>
   <ECar.chargerCard> "001" </ECar.chargerCard>
   <ECar.chargerType> "Tesla Super Charge"</ECar.chargerType>
