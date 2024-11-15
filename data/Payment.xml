@@ -1,14 +1,12 @@
 <!ELEMENT class (attributes*, methods*)>
-<!ATTLIST class
-    name CDATA #REQUIRED
->
-<!ELEMENT attributes (attribute+)>
-<!ELEMENT attribute EMPTY>
-<!ATTLIST attribute
-    name CDATA #REQUIRED
-    type CDATA #REQUIRED
-    visibility (public | private | protected) #REQUIRED
->
+<!ATTLIST Payment #REQUIRED>
+
+<!ELEMENT Payment.paymentID (#PCDATA)>
+<!ELEMENT Payment.bookingID (#PCDATA)>
+<!ELEMENT Payment.carID (#PCDATA)>
+<!ELEMENT Payment.date (#PCDATA)>
+<!ELEMENT Payment.cost (#PCDATA)>
+<!ELEMENT Payement.method (#PCDATA)>
 
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE PAYEMENT SYSTEM "Payemnt.dtd">
