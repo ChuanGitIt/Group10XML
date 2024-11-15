@@ -54,6 +54,48 @@ car.status,car.location,car.fuelLevel,car.pricePerDay,ECar.battery,ECar.chargerC
   <ClassicCar.fuelCard> "002" </ClassicCar.fuelCard>
 </ClassicCar>
 
+<ClassicCar carID="003">
+    <car.types>SUV</car.types>
+    <car.brand>Ford</car.brand>
+    <car.model>Explorer</car.model>
+    <car.licensePlate>"GoFord003"</car.licensePlate>
+    <car.year>2015</car.year>
+    <car.status>"Great condition, perfect for families"</car.status>
+    <car.location>"Dublin City Centre"</car.location>
+    <car.fuelLevel>"2.0T"</car.fuelLevel>
+    <ClassicCar.fuel>"Gasoline"</ClassicCar.fuel>
+    <ClassicCar.fuelCard>"003"</ClassicCar.fuelCard>
+    <ClassicCar.carPricePerDay>20</ClassicCar.carPricePerDay>
+</ClassicCar>
+
+<ClassicCar carID="004">
+    <car.types>"Coupe"</car.types>
+    <car.brand>"Chevrolet"</car.brand>
+    <car.model>"Camaro"</car.model>
+    <car.licensePlate>"CamaroLove"</car.licensePlate>
+    <car.year>2019</car.year>
+    <car.status>"Excellent condition, ideal for two"</car.status>
+    <car.location>"Trinity"</car.location>
+    <car.fuelLevel>"1.2T"</car.fuelLevel>
+    <ClassicCar.fuel>"Gasoline"</ClassicCar.fuel>
+    <ClassicCar.fuelCard>"004"</ClassicCar.fuelCard>
+    <car.pricePerDay>30</car.pricePerDay>
+  </ClassicCar>
+
+  <ClassicCar carID="005">
+    <car.types>Pickup</car.types>
+    <car.brand>Dodge</car.brand>
+    <car.model>Ram 1500</car.model>
+    <car.licensePlate>RamStrong005</car.licensePlate>
+    <car.year>2018</car.year>
+    <car.status>Sturdy and reliable, suitable for heavy loads</car.status>
+    <car.location>Suburbs</car.location>
+    <car.fuelLevel>Three-quarters</car.fuelLevel>
+    <ClassicCar.fuel>Diesel</ClassicCar.fuel>
+    <ClassicCar.fuelCard>005</ClassicCar.fuelCard>
+    <car.pricePerDay>25</car.pricePerDay>
+  </ClassicCar>
+
 <ECar carID = "101">
   <car.types> "SUV" </car.types>
   <car.brand> "Tesla" </car.brand>
@@ -68,5 +110,50 @@ car.status,car.location,car.fuelLevel,car.pricePerDay,ECar.battery,ECar.chargerC
   <ECar.chargerCard> "001" </ECar.chargerCard>
   <ECar.chargerType> "Tesla Super Charge"</ECar.chargerType>
 </ECar>
+
+<ECar carID="102">
+    <car.types>"Hatchback"</car.types>
+    <car.brand>"Nissan"</car.brand>
+    <car.model>"Leaf"</car.model>
+    <car.licensePlate>"GreenRide"</car.licensePlate>
+    <car.year>"2021"</car.year>
+    <car.status>"Good condition, great for city driving"</car.status>
+    <car.location>"Dublin City Centre"</car.location>
+    <car.fuelLevel>"15.8 kWh/100km"</car.fuelLevel>
+    <car.pricePerDay>25</car.pricePerDay>
+    <ECar.battery>"385 km"</ECar.battery>
+    <ECar.chargerCard>"002"</ECar.chargerCard>
+    <ECar.chargerType>"Type 2 Charger"</ECar.chargerType>
+  </ECar>
+
+  <ECar carID="103">
+    <car.types>"Sedan"</car.types>
+    <car.brand>"BMW"</car.brand>
+    <car.model>"i4"</car.model>
+    <car.licensePlate>"EcoBMW"</car.licensePlate>
+    <car.year>"2022"</car.year>
+    <car.status>"Brand new, luxurious and eco-friendly"</car.status>
+    <car.location>"Trinity"</car.location>
+    <car.fuelLevel>"18.0 kWh/100km"</car.fuelLevel>
+    <car.pricePerDay>80</car.pricePerDay>
+    <ECar.battery>"590 km"</ECar.battery>
+    <ECar.chargerCard>"003"</ECar.chargerCard>
+    <ECar.chargerType>"CCS Charger"</ECar.chargerType>
+  </ECar>
+
+  <ECar carID="104">
+    <car.types>"SUV"</car.types>
+    <car.brand>"Hyundai"</car.brand>
+    <car.model>"Kona Electric"</car.model>
+    <car.licensePlate>"KonaEV"</car.licensePlate>
+    <car.year>2019</car.year>
+    <car.status>"Efficient and compact SUV"</car.status>
+    <car.location>"Trinity"</car.location>
+    <car.fuelLevel>"14.7 kWh/100km"</car.fuelLevel>
+    <car.pricePerDay>28</car.pricePerDay>
+    <ECar.battery>"450 km"</ECar.battery>
+    <ECar.chargerCard>"004"</ECar.chargerCard>
+    <ECar.chargerType>"CHAdeMO Charger"</ECar.chargerType>
+  </ECar>
 
 </car>
