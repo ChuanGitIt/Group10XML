@@ -1,4 +1,4 @@
-<!ELEMENT class (attributes*, methods*)>
+<!ELEMENT Payment (Payment.paymentID, Payment.bookingID, Payment.carID, Payment.date, Payment.cost, Payement.method)>
 <!ATTLIST Payment #REQUIRED>
 
 <!ELEMENT Payment.paymentID (#PCDATA)>
