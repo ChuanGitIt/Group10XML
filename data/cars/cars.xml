@@ -33,7 +33,7 @@ car.status,car.location,car.fuelLevel,car.pricePerDay,ECar.battery,ECar.chargerC
   <car.licensePlate> "Im License" </car.licensePlate>
   <car.year> 2004 </car.year>
   <car.status> "Nice condition, clean and spacious room"</car.status>
-  <car.location> "Dublin City Centre" </car.location>
+  <car.location> Dublin City Centre </car.location>
   <car.fuelLevel> "23.3 – 26.2 mpg" </car.fuelLevel>
   <car.pricePerDay> 100 </car.pricePerDay>
   <ClassicCar.fuel> "Petrol" </ClassicCar.fuel>
@@ -47,7 +47,7 @@ car.status,car.location,car.fuelLevel,car.pricePerDay,ECar.battery,ECar.chargerC
   <car.licensePlate> "Im Toyota" </car.licensePlate>
   <car.year> 2000 </car.year>
   <car.status> "Pretty good, suitable for less than 4 people" </car.status>
-  <car.location> "Trinity" </car.location>
+  <car.location> Trinity </car.location>
   <car.fuelLevel> "1.2T Hybrid"</car.fuelLevel>
   <car.pricePerDay> 10 </car.pricePerDay>
   <ClassicCar.fuel> "Diesel" </ClassicCar.fuel>
@@ -61,7 +61,7 @@ car.status,car.location,car.fuelLevel,car.pricePerDay,ECar.battery,ECar.chargerC
     <car.licensePlate>"GoFord003"</car.licensePlate>
     <car.year>2015</car.year>
     <car.status>"Great condition, perfect for families"</car.status>
-    <car.location>"Dublin City Centre"</car.location>
+    <car.location> Dublin City Centre </car.location>
     <car.fuelLevel>"2.0T"</car.fuelLevel>
     <ClassicCar.fuel>"Gasoline"</ClassicCar.fuel>
     <ClassicCar.fuelCard>"003"</ClassicCar.fuelCard>
@@ -75,7 +75,7 @@ car.status,car.location,car.fuelLevel,car.pricePerDay,ECar.battery,ECar.chargerC
     <car.licensePlate>"CamaroLove"</car.licensePlate>
     <car.year>2019</car.year>
     <car.status>"Excellent condition, ideal for two"</car.status>
-    <car.location>"Trinity"</car.location>
+    <car.location> Trinity </car.location>
     <car.fuelLevel>"1.2T"</car.fuelLevel>
     <ClassicCar.fuel>"Gasoline"</ClassicCar.fuel>
     <ClassicCar.fuelCard>"004"</ClassicCar.fuelCard>
@@ -103,7 +103,7 @@ car.status,car.location,car.fuelLevel,car.pricePerDay,ECar.battery,ECar.chargerC
   <car.licensePlate> "Hit Me" </car.licensePlate>
   <car.year>  2020 </car.year>
   <car.status> "Battery is in perfect shape" </car.status>
-  <car.location> "Dublin Airport" </car.location>
+  <car.location> Dublin Airport </car.location>
   <car.fuelLevel> "17.3 kWh/100km" </car.fuelLevel>
   <car.pricePerDay> 30 </car.pricePerDay>
   <ECar.battery> "514 km" </ECar.battery>
@@ -118,7 +118,7 @@ car.status,car.location,car.fuelLevel,car.pricePerDay,ECar.battery,ECar.chargerC
     <car.licensePlate>"GreenRide"</car.licensePlate>
     <car.year>"2021"</car.year>
     <car.status>"Good condition, great for city driving"</car.status>
-    <car.location>"Dublin City Centre"</car.location>
+    <car.location> Dublin City Centre </car.location>
     <car.fuelLevel>"15.8 kWh/100km"</car.fuelLevel>
     <car.pricePerDay>25</car.pricePerDay>
     <ECar.battery>"385 km"</ECar.battery>
@@ -133,7 +133,7 @@ car.status,car.location,car.fuelLevel,car.pricePerDay,ECar.battery,ECar.chargerC
     <car.licensePlate>"EcoBMW"</car.licensePlate>
     <car.year>"2022"</car.year>
     <car.status>"Brand new, luxurious and eco-friendly"</car.status>
-    <car.location>"Trinity"</car.location>
+    <car.location> Trinity </car.location>
     <car.fuelLevel>"18.0 kWh/100km"</car.fuelLevel>
     <car.pricePerDay>80</car.pricePerDay>
     <ECar.battery>"590 km"</ECar.battery>
@@ -148,7 +148,7 @@ car.status,car.location,car.fuelLevel,car.pricePerDay,ECar.battery,ECar.chargerC
     <car.licensePlate>"KonaEV"</car.licensePlate>
     <car.year>2019</car.year>
     <car.status>"Efficient and compact SUV"</car.status>
-    <car.location>"Trinity"</car.location>
+    <car.location> Trinity </car.location>
     <car.fuelLevel>"14.7 kWh/100km"</car.fuelLevel>
     <car.pricePerDay>28</car.pricePerDay>
     <ECar.battery>"450 km"</ECar.battery>
