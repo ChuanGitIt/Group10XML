@@ -1,55 +1,25 @@
+<!DOCTYPE Payment [
 <!ELEMENT Payment (Payment.paymentID, Payment.bookingID, Payment.carID, Payment.date, Payment.cost, Payement.method)>
-<!ATTLIST Payment #REQUIRED>
-
-<!ELEMENT Payment.paymentID (#PCDATA)>
+<!ATTLIST Payment paymentID CDATA #REQUIRED>
 <!ELEMENT Payment.bookingID (#PCDATA)>
 <!ELEMENT Payment.carID (#PCDATA)>
 <!ELEMENT Payment.date (#PCDATA)>
 <!ELEMENT Payment.cost (#PCDATA)>
-<!ELEMENT Payement.method (#PCDATA)>
-
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE PAYEMENT SYSTEM "Payemnt.dtd">
-<Payment>
-    <Payment.paymentID>"1234"</paymentID>
-    <Payment.bookingID>"512"</bookingID>
-    <Payment.carID>"001"</carID>
-    <Payment.date>"01/01/25"</date>
-    <Payment.cost>"24.99"</cost>
-    <Payement.method>"Visa"</method>
-</Payment>
-
-<Payment>
-    <Payment.paymentID>"1013"</paymentID>
-    <Payment.bookingID>"623"</bookingID>
-    <Payment.carID>"032"</carID>
-    <Payment.date>"12/01/25"</date>
-    <Payment.cost>"37.99"</cost>
-    <Payement.method>"MasterCard"</method>
-</Payment>
-
-
-
-
-<!ELEMENT methods (method+)>
-<!ELEMENT method EMPTY>
-<!ATTLIST method
-    name CDATA #REQUIRED
-    visibility (public | private | protected) #REQUIRED
-    returnType CDATA #REQUIRED
->
-<class name="Payment">
-    <attributes>
-        <attribute name="paymentID" type="String" visibility="private"/>
-        <attribute name="bookingID" type="String" visibility="private"/>
-        <attribute name="carID" type="String" visibility="private"/>
-        <attribute name="date" type="String" visibility="private"/>
-        <attribute name="cost" type="Double" visibility="private"/>
-        <attribute name="paymentMethod" type="String" visibility="private"/>
-    </attributes>
-    <methods>
-        <method name="processPayment" visibility="public" returnType="boolean"/>
-        <method name="refundPayment" visibility="private" returnType="boolean"/>
-        <method name="viewPaymentDetails" visibility="private" returnType="void"/>
-    </methods>
-</class>
+<!ELEMENT Payment.method (#PCDATA)>
+]>
+<Payments>
+    <Payment paymentID="1234">
+        <bookingID>512</bookingID>
+        <carID>001</carID>
+        <date>01/01/25</date>
+        <cost>24.99</cost>
+        <method>Visa</method>
+    </Payment>
+    <Payment paymentID="1013">
+        <bookingID>623</bookingID>
+        <carID>032</carID>
+        <date>12/01/25</date>
+        <cost>37.99</cost>
+        <method>MasterCard</method>
+    </Payment>
+</Payments>
