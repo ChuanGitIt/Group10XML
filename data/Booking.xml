@@ -1,57 +1,66 @@
-<!DOCTYPE booking [
-    <!ELEMENT booking (BookingReport*, NotificationReport*)>
-    
-    <!ELEMENT BookingReport (booking.ReportDate, booking.ReportType, booking.Details, BookingReport.StartTime, BookingReport.EndTime, BookingReport.Cost, BookingReport.Status)>
-    <!ELEMENT NotificationReport (booking.ReportDate, booking.ReportType, booking.Details, NotificationReport.Message, NotificationReport.Target)>
+<!DOCTYPE Booking [
+    <!ELEMENT Booking (BookingEntry+)>
+    <!ELEMENT BookingEntry (userID, carID, startTime, endTime, cost, status)>
+    <!ATTLIST BookingEntry bookingID CDATA #REQUIRED>
 
-    <!ATTLIST BookingReport reportID CDATA #REQUIRED>
-    <!ATTLIST NotificationReport reportID CDATA #REQUIRED>
-    <!ELEMENT booking.ReportDate (#PCDATA)>
-    <!ELEMENT booking.ReportType (#PCDATA)>
-
-    <!ELEMENT BookingReport.StartTime (#PCDATA)>
-    <!ELEMENT BookingReport.EndTime (#PCDATA)>
-    <!ELEMENT BookingReport.Cost (#PCDATA)>
-    <!ELEMENT BookingReport.Status (#PCDATA)>
-
-    <!ELEMENT NotificationReport.Message (#PCDATA)>
-    <!ELEMENT NotificationReport.Target (#PCDATA)>
-
-    <!ELEMENT booking.Details (Description, CustomerID, BookingID, CarID)>
-    <!ATTLIST booking.Details status (Completed | Pending) #REQUIRED>
-
-    <!ELEMENT Description (#PCDATA)>
-    <!ELEMENT CustomerID (#PCDATA)>
-    <!ELEMENT BookingID (#PCDATA)>
-    <!ELEMENT CarID (#PCDATA)>
+    <!ELEMENT userID (#PCDATA)>
+    <!ELEMENT carID (#PCDATA)>
+    <!ELEMENT startTime (#PCDATA)>
+    <!ELEMENT endTime (#PCDATA)>
+    <!ELEMENT cost (#PCDATA)>
+    <!ELEMENT status (#PCDATA)>
 ]>
 
-<booking>
-    <BookingReport reportID="BOOKREP001">
-        <booking.ReportDate>2024-11-15</booking.ReportDate>
-        <booking.ReportType>Booking</booking.ReportType>
-        <booking.Details status="Completed">
-            <Description>Details about the completed booking</Description>
-            <CustomerID>CUST001</CustomerID>
-            <BookingID>BOOK001</BookingID>
-            <CarID>CAR001</CarID>
-        </booking.Details>
-        <BookingReport.StartTime>2024-11-14T10:00</BookingReport.StartTime>
-        <BookingReport.EndTime>2024-11-14T15:00</BookingReport.EndTime>
-        <BookingReport.Cost>150.00</BookingReport.Cost>
-        <BookingReport.Status>Confirmed</BookingReport.Status>
-    </BookingReport>
+<Booking>
+    <BookingEntry bookingID="001">
+        <bookingID>001</bookingID>
+        <userID>USER123</userID>
+        <carID>CAR789</carID>
+        <startTime>2024-11-20T10:00:00</startTime>
+        <endTime>2024-11-20T15:00:00</endTime>
+        <cost>150.00</cost>
+        <status>Confirmed</status>
+    </BookingEntry>
 
-    <NotificationReport reportID="NOT001">
-        <booking.ReportDate>2024-11-15</booking.ReportDate>
-        <booking.ReportType>Notification</booking.ReportType>
-        <booking.Details status="Pending">
-            <Description>Notification message sent to customer</Description>
-            <CustomerID>CUST001</CustomerID>
-            <BookingID>BOOK001</BookingID>
-            <CarID>CAR001</CarID>
-        </booking.Details>
-        <NotificationReport.Message>Your booking has been confirmed.</NotificationReport.Message>
-        <NotificationReport.Target>Email</NotificationReport.Target>
-    </NotificationReport>
-</booking>
+    <BookingEntry bookingID="002">
+        <bookingID>002</bookingID>
+        <userID>USER456</userID>
+        <carID>CAR456</carID>
+        <startTime>2024-12-01T09:00:00</startTime>
+        <endTime>2024-12-01T13:00:00</endTime>
+        <cost>200.00</cost>
+        <status>Pending</status>
+    </BookingEntry>
+
+    <BookingEntry bookingID="003">
+        <bookingID>003</bookingID>
+        <userID>USER789</userID>
+        <carID>CAR123</carID>
+        <startTime>2024-12-05T14:30:00</startTime>
+        <endTime>2024-12-05T18:30:00</endTime>
+        <cost>175.50</cost>
+        <status>Cancelled</status>
+    </BookingEntry>
+
+    <BookingEntry bookingID="004">
+        <bookingID>004</bookingID>
+        <userID>USER321</userID>
+        <carID>CAR654</carID>
+        <startTime>2024-11-30T08:00:00</startTime>
+        <endTime>2024-11-30T12:00:00</endTime>
+        <cost>120.00</cost>
+        <status>Completed</status>
+    </BookingEntry>
+
+    <BookingEntry bookingID="005">
+        <bookingID>005</bookingID>
+        <userID>USER234</userID>
+        <carID>CAR987</carID>
+        <startTime>2024-11-29T16:00:00</startTime>
+        <endTime>2024-11-29T20:00:00</endTime>
+        <cost>250.75</cost>
+        <status>Confirmed</status>
+    </BookingEntry>
+</Booking>
+
+
