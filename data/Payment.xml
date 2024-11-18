@@ -22,7 +22,7 @@
         <cost>200.00</cost>
         <method>MasterCard</method>
     </Payment>
-    <Payment paymentID="12356">
+    <Payment paymentID="1236">
         <bookingID>103</bookingID>
         <carID>003</carID>
         <date>05/12/24</date>
