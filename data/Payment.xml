@@ -19,6 +19,15 @@
     <Payement.method>"Visa"</method>
 </Payment>
 
+<Payment>
+    <Payment.paymentID>"1013"</paymentID>
+    <Payment.bookingID>"623"</bookingID>
+    <Payment.carID>"032"</carID>
+    <Payment.date>"12/01/25"</date>
+    <Payment.cost>"37.99"</cost>
+    <Payement.method>"MasterCard"</method>
+</Payment>
+
 
 
 
