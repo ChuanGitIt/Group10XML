@@ -1,102 +1,107 @@
-for $report in doc("car_report.xml")/reports/*
-let $reportID := $report/@reportID,
-    $reportDate := $report/reports.ReportDate,
-    $reportType := $report/reports.ReportType,
-    $status := $report/reports.Details/@status,
-    $description := $report/reports.Details/Description,
-    $customerID := $report/reports.Details/CustomerID,
-    $bookingID := $report/reports.Details/BookingID,
-    $carID := $report/reports.Details/CarID,
-    $rating := if ($report/name() = "FeedbackReport") then $report/FeedbackReport.rating else (),
-    $comment := if ($report/name() = "FeedbackReport") then $report/FeedbackReport.comment else (),
-    $Amount := if ($report/name() = "PaymentReport") then $report/PaymentReport.Amount else(),
-    $Method := if ($report/name() = "PaymentReport") then $report/PaymentReport.Method else(),
-    $InvoiceID := if ($report/name() = "InvoiceReport") then $report/InvoiceReport.InvoiceID else(),
-    $TotalAmount := if ($report/name() = "InvoiceReport") then $report/InvoiceReport.TotalAmount else(),
-    $Message := if ($report/name() = "NotificationReport") then $report/NotificationReport.Message else(),
-    $Target := if ($report/name() = "NotificationReport") then $report/NotificationReport.Target else()
+<!DOCTYPE reports [
+    <!ELEMENT reports (MaintenanceReport*, FeedbackReport*, PaymentReport*, InvoiceReport*, NotificationReport*)>
     
-return
-    (
-        if ($report/name() = "MaintenanceReport") then
-            (
-                "We have a maintenance report with details:",
-                <MaintenanceReport>
-                    <ReportID>{ $reportID }</ReportID>
-                    <ReportDate>{ $reportDate/text() }</ReportDate>
-                    <ReportType>{ $reportType/text() }</ReportType>
-                    <Status>{ $status }</Status>
-                    <Description>{ $description/text() }</Description>
-                    <CustomerID>{ $customerID/text() }</CustomerID>
-                    <BookingID>{ $bookingID/text() }</BookingID>
-                    <CarID>{ $carID/text() }</CarID>
-                </MaintenanceReport>
-            )
-        else if ($report/name() = "FeedbackReport") then
-            (
-                "We have a feedback report with details:",
-                <FeedbackReport>
-                    <ReportID>{ $reportID }</ReportID>
-                    <ReportDate>{ $reportDate/text() }</ReportDate>
-                    <ReportType>{ $reportType/text() }</ReportType>
-                    <Status>{ $status }</Status>
-                    <Description>{ $description/text() }</Description>
-                    <CustomerID>{ $customerID/text() }</CustomerID>
-                    <BookingID>{ $bookingID/text() }</BookingID>
-                    <CarID>{ $carID/text() }</CarID>
-                    <Rating>{ $rating/text() }</Rating>
-                    <Comment>{ $comment/text() }</Comment>
-                </FeedbackReport>
-            )
-        else if ($report/name() = "PaymentReport") then
-            (
-                "We have a Payment report with details:",
-                <PaymentReport>
-                    <ReportID>{ $reportID }</ReportID>
-                    <ReportDate>{ $reportDate/text() }</ReportDate>
-                    <ReportType>{ $reportType/text() }</ReportType>
-                    <Status>{ $status }</Status>
-                    <Description>{ $description/text() }</Description>
-                    <CustomerID>{ $customerID/text() }</CustomerID>
-                    <BookingID>{ $bookingID/text() }</BookingID>
-                    <CarID>{ $carID/text() }</CarID>
-                    <Amount>{ $Amount/text() }</Amount>
-                    <Method>{ $Method/text() }</Method>
-                </PaymentReport>
-            )
-            
-          else if ($report/name() = "InvoiceReport") then
-            (
-                "We have a Invoice report with details:",
-                <InvoiceReport>
-                    <ReportID>{ $reportID }</ReportID>
-                    <ReportDate>{ $reportDate/text() }</ReportDate>
-                    <ReportType>{ $reportType/text() }</ReportType>
-                    <Status>{ $status }</Status>
-                    <Description>{ $description/text() }</Description>
-                    <CustomerID>{ $customerID/text() }</CustomerID>
-                    <BookingID>{ $bookingID/text() }</BookingID>
-                    <CarID>{ $carID/text() }</CarID>
-                    <InvoiceID>{ $InvoiceID/text() }</InvoiceID>
-                    <TotalAmount>{ $TotalAmount/text() }</TotalAmount>
-                </InvoiceReport>
-            )
-            
-          else if ($report/name() = "NotificationReport") then
-            (
-                "We have a Notification report with details:",
-                <NotificationReport>
-                    <ReportID>{ $reportID }</ReportID>
-                    <ReportDate>{ $reportDate/text() }</ReportDate>
-                    <ReportType>{ $reportType/text() }</ReportType>
-                    <Status>{ $status }</Status>
-                    <Description>{ $description/text() }</Description>
-                    <CustomerID>{ $customerID/text() }</CustomerID>
-                    <BookingID>{ $bookingID/text() }</BookingID>
-                    <CarID>{ $carID/text() }</CarID>
-                    <Message>{ $InvoiceID/text() }</Message>
-                    <Target>{ $TotalAmount/text() }</Target>
-                </NotificationReport>
-            )
+    <!ELEMENT MaintenanceReport (reports.ReportDate, reports.ReportType, reports.Details)>
+    <!ELEMENT FeedbackReport (reports.ReportDate, reports.ReportType, reports.Details, FeedbackReport.rating, FeedbackReport.comment)>
+    
+    <!ELEMENT PaymentReport (reports.ReportDate, reports.ReportType, reports.Details, PaymentReport.Amount, PaymentReport.Method)>
+    <!ELEMENT InvoiceReport (reports.ReportDate, reports.ReportType, reports.Details, InvoiceReport.InvoiceID, InvoiceReport.TotalAmount)>
+    <!ELEMENT NotificationReport (reports.ReportDate, reports.ReportType, reports.Details, NotificationReport.Message, NotificationReport.Target)>
 
-    )
+    <!ATTLIST PaymentReport reportID CDATA #REQUIRED>
+    <!ATTLIST InvoiceReport reportID CDATA #REQUIRED>
+    <!ATTLIST NotificationReport reportID CDATA #REQUIRED>
+    <!ATTLIST MaintenanceReport reportID CDATA #REQUIRED>
+    <!ATTLIST FeedbackReport reportID CDATA #REQUIRED>
+    
+
+    <!ELEMENT reports.ReportDate (#PCDATA)>
+    <!ELEMENT reports.ReportType (#PCDATA)>
+
+    <!ELEMENT FeedbackReport.rating (#PCDATA)>
+    <!ELEMENT FeedbackReport.comment (#PCDATA)>
+    
+    <!ELEMENT PaymentReport.Amount (#PCDATA)>
+    <!ELEMENT PaymentReport.Method (#PCDATA)>
+
+    <!ELEMENT InvoiceReport.InvoiceID (#PCDATA)>
+    <!ELEMENT InvoiceReport.TotalAmount (#PCDATA)>
+    
+    <!ELEMENT NotificationReport.Message (#PCDATA)>
+    <!ELEMENT NotificationReport.Target (#PCDATA)>
+
+    <!ELEMENT reports.Details (Description, CustomerID, BookingID, CarID)>
+    <!ATTLIST reports.Details status (Completed | Pending) #REQUIRED>
+    
+    <!ELEMENT Description (#PCDATA)>
+    <!ELEMENT CustomerID (#PCDATA)>
+    <!ELEMENT BookingID (#PCDATA)>
+    <!ELEMENT CarID (#PCDATA)>
+
+]>
+
+<reports>
+    <MaintenanceReport reportID="RPT001">
+        <reports.ReportDate>11-11-2024</reports.ReportDate>
+        <reports.ReportType>Maintenance</reports.ReportType>
+        <reports.Details status="Completed">
+            <Description>Maintenance report</Description>
+            <CustomerID>CUST123</CustomerID>
+            <BookingID>BOOK123</BookingID>
+            <CarID>CAR123</CarID>
+        </reports.Details>
+    </MaintenanceReport>
+
+    <FeedbackReport reportID="RPT002">
+        <reports.ReportDate>22-11-2024</reports.ReportDate>
+        <reports.ReportType>Feedback</reports.ReportType>
+        <reports.Details status="Pending">
+            <Description>Customer feedback report (comment)</Description>
+            <CustomerID>CUST123</CustomerID>
+            <BookingID>BOOK123</BookingID>
+            <CarID>CAR123</CarID>
+        </reports.Details>
+        <FeedbackReport.rating>Customer rating of service(5)</FeedbackReport.rating>
+        <FeedbackReport.comment>Great service!</FeedbackReport.comment>
+    </FeedbackReport>
+
+    <PaymentReport reportID="PAY001">
+        <reports.ReportDate>14-11-2024</reports.ReportDate>
+        <reports.ReportType>Payment</reports.ReportType>
+        <reports.Details status="Completed">
+            <Description>Payment processing for booking</Description>
+            <CustomerID>CUST001</CustomerID>
+            <BookingID>BOOK001</BookingID>
+            <CarID>CAR001</CarID>
+        </reports.Details>
+        <PaymentReport.Amount>150.00</PaymentReport.Amount>
+        <PaymentReport.Method>Credit Card</PaymentReport.Method>
+    </PaymentReport>
+
+    <InvoiceReport reportID="INV001">
+        <reports.ReportDate>14-11-2024</reports.ReportDate>
+        <reports.ReportType>Invoice</reports.ReportType>
+        <reports.Details status="Completed">
+            <Description>Invoice generated for booking</Description>
+            <CustomerID>CUST001</CustomerID>
+            <BookingID>BOOK001</BookingID>
+            <CarID>CAR001</CarID>
+        </reports.Details>
+        <InvoiceReport.InvoiceID>INV001</InvoiceReport.InvoiceID>
+        <InvoiceReport.TotalAmount>150.00</InvoiceReport.TotalAmount>
+    </InvoiceReport>
+
+    <NotificationReport reportID="NOT001">
+        <reports.ReportDate>14-11-2024</reports.ReportDate>
+        <reports.ReportType>Notification</reports.ReportType>
+        <reports.Details status="Pending">
+            <Description>Notification message sent to customer</Description>
+            <CustomerID>CUST001</CustomerID>
+            <BookingID>BOOK001</BookingID>
+            <CarID>CAR001</CarID>
+        </reports.Details>
+        <NotificationReport.Message>Your booking has been confirmed.</NotificationReport.Message>
+        <NotificationReport.Target>Email</NotificationReport.Target>
+    </NotificationReport>
+
+</reports>
