@@ -4,7 +4,7 @@ for $j in doc("Payment.xml")/Payments
 return 
   <Payment>
       {string($j/Payment.paymentID)}
-      {concat(string($j/Payment.cost),string($j/Payment.bookingID), " Euros")}
+      {fn:string-join(string($j/Payment.cost),string($j/Payment.bookingID), " Euros")}
   </Payment>
 };
 
@@ -15,8 +15,8 @@ where $Payment/Payment.cost > 30.00
 return 
 <Payment>
     {string($Payment/Payment.paymentID)}
-    {concat(string($Payment/Payment.cost), " Euros")}
-    {concat("Paid via ", string($Payment/Payment.cost))}
+    {fn:string-join(string($Payment/Payment.cost), " Euros")}
+    {fn:string-join("Paid via ", string($Payment/Payment.cost))}
 </Payment>
 };
 
@@ -24,3 +24,4 @@ return
 {local:all_payments()}
 {local:Payments_Over_30()}
 </all>
+
