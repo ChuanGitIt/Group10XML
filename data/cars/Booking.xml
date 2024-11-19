@@ -55,7 +55,7 @@
     <BookingEntry bookingID="005">
         <bookingID>005</bookingID>
         <CustomerID>USER234</CustomerID>
-        <carID>005</carID>
+        <carID>101</carID>
         <startTime>2024-12-29T16:00:00</startTime>
         <endTime>2024-12-29T20:00:00</endTime>
         <cost>250.75</cost>
