@@ -1,6 +1,6 @@
 <!DOCTYPE Booking [
     <!ELEMENT Booking (BookingEntry+)>
-    <!ELEMENT BookingEntry (userID, carID, startTime, endTime, cost, status)>
+    <!ELEMENT BookingEntry (CustomerID, carID, startTime, endTime, cost, status)>
     <!ATTLIST BookingEntry bookingID CDATA #REQUIRED>
 
     <!ELEMENT userID (#PCDATA)>
@@ -14,7 +14,7 @@
 <Booking>
     <BookingEntry bookingID="001">
         <bookingID>101</bookingID>
-        <userID>USER123</userID>
+        <CustomerID>USER123</CustomerID>
         <carID>001</carID>
         <startTime>2024-11-20T10:00:00</startTime>
         <endTime>2024-11-20T15:00:00</endTime>
@@ -23,7 +23,7 @@
     </BookingEntry>
 
     <BookingEntry bookingID="623">
-        <bookingID>102</bookingID>
+        <bookingID>623</bookingID>
         <userID>USER456</userID>
         <carID>002</carID>
         <startTime>2024-12-01T09:00:00</startTime>
@@ -33,8 +33,8 @@
     </BookingEntry>
 
     <BookingEntry bookingID="003">
-        <bookingID>103</bookingID>
-        <userID>USER789</userID>
+        <bookingID>003</bookingID>
+        <CustomerID>USER789</CustomerID>
         <carID>003</carID>
         <startTime>2024-12-05T14:30:00</startTime>
         <endTime>2024-12-05T18:30:00</endTime>
@@ -43,8 +43,8 @@
     </BookingEntry>
 
     <BookingEntry bookingID="004">
-        <bookingID>104</bookingID>
-        <userID>USER321</userID>
+        <bookingID>004</bookingID>
+        <CustomerID>USER321</CustomerID>
         <carID>004</carID>
         <startTime>2024-12-30T08:00:00</startTime>
         <endTime>2024-12-20T12:00:00</endTime>
@@ -53,8 +53,8 @@
     </BookingEntry>
 
     <BookingEntry bookingID="005">
-        <bookingID>105</bookingID>
-        <userID>USER234</userID>
+        <bookingID>005</bookingID>
+        <CustomerID>USER234</CustomerID>
         <carID>005</carID>
         <startTime>2024-12-29T16:00:00</startTime>
         <endTime>2024-12-29T20:00:00</endTime>

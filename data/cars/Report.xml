@@ -1,34 +1,30 @@
-<!DOCTYPE reports [
-    <!ELEMENT reports (MaintenanceReport*, FeedbackReport*, PaymentReport*, InvoiceReport*, NotificationReport*)>
-    
-    <!ELEMENT MaintenanceReport (reports.ReportDate, reports.ReportType, reports.Details)>
-    <!ELEMENT FeedbackReport (reports.ReportDate, reports.ReportType, reports.Details, FeedbackReport.rating, FeedbackReport.comment)>
-    
-    <!ELEMENT PaymentReport (reports.ReportDate, reports.ReportType, reports.Details, PaymentReport.Amount, PaymentReport.Method)>
-    <!ELEMENT InvoiceReport (reports.ReportDate, reports.ReportType, reports.Details, InvoiceReport.InvoiceID, InvoiceReport.TotalAmount)>
-    <!ELEMENT NotificationReport (reports.ReportDate, reports.ReportType, reports.Details, NotificationReport.Message, NotificationReport.Target)>
+<!DOCTYPE Report [
+  <!ELEMENT Report (reports)>
 
-    <!ATTLIST PaymentReport reportID CDATA #REQUIRED>
-    <!ATTLIST InvoiceReport reportID CDATA #REQUIRED>
-    <!ATTLIST NotificationReport reportID CDATA #REQUIRED>
-    <!ATTLIST MaintenanceReport reportID CDATA #REQUIRED>
-    <!ATTLIST FeedbackReport reportID CDATA #REQUIRED>
-    
+  <!ELEMENT reports (MaintenanceReport?, FeedbackReport?, PaymentReport?, InvoiceReport?)>
+  <!ATTLIST reports bookingID CDATA #REQUIRED>
+
+  <!ELEMENT MaintenanceReport (reports.ReportDate, reports.ReportType, reports.Details)>
+  <!ATTLIST MaintenanceReport reportID CDATA #REQUIRED>
+
+  <!ELEMENT FeedbackReport (reports.ReportDate, reports.ReportType, reports.Details, Rating?, Comment?)>
+  <!ATTLIST FeedbackReport reportID CDATA #REQUIRED>
+
+  <!ELEMENT PaymentReport (reports.ReportDate, reports.ReportType, reports.Details, Amount?, Method?)>
+  <!ATTLIST PaymentReport reportID CDATA #REQUIRED>
+
+  <!ELEMENT InvoiceReport (reports.ReportDate, reports.ReportType, reports.Details, InvoiceID?, TotalAmount?)>
+  <!ATTLIST InvoiceReport reportID CDATA #REQUIRED>    
 
     <!ELEMENT reports.ReportDate (#PCDATA)>
     <!ELEMENT reports.ReportType (#PCDATA)>
-
-    <!ELEMENT FeedbackReport.rating (#PCDATA)>
-    <!ELEMENT FeedbackReport.comment (#PCDATA)>
-    
-    <!ELEMENT PaymentReport.Amount (#PCDATA)>
-    <!ELEMENT PaymentReport.Method (#PCDATA)>
-
-    <!ELEMENT InvoiceReport.InvoiceID (#PCDATA)>
-    <!ELEMENT InvoiceReport.TotalAmount (#PCDATA)>
-    
-    <!ELEMENT NotificationReport.Message (#PCDATA)>
-    <!ELEMENT NotificationReport.Target (#PCDATA)>
+    <!ELEMENT Rating (#PCDATA)>
+    <!ELEMENT Comment (#PCDATA)>
+    <!ELEMENT Amount (#PCDATA)>
+    <!ELEMENT Method (#PCDATA)>
+    <!ELEMENT InvoiceID (#PCDATA)>
+    <!ELEMENT TotalAmount (#PCDATA)>
+    <!ELEMENT Message (#PCDATA)>
 
     <!ELEMENT reports.Details (Description, CustomerID, BookingID, CarID)>
     <!ATTLIST reports.Details status (Completed | Pending) #REQUIRED>
@@ -40,68 +36,82 @@
 
 ]>
 
-<reports>
-    <MaintenanceReport reportID="RPT001">
-        <reports.ReportDate>11-11-2024</reports.ReportDate>
-        <reports.ReportType>Maintenance</reports.ReportType>
-        <reports.Details status="Completed">
-            <Description>Maintenance report</Description>
-            <CustomerID>CUST123</CustomerID>
-            <BookingID>BOOK123</BookingID>
-            <CarID>CAR123</CarID>
-        </reports.Details>
-    </MaintenanceReport>
+<Report>    
+    <reports bookingID="001">
+        <MaintenanceReport reportID="MR001">
+            <reports.ReportType>Maintenance</reports.ReportType>
+            <reports.ReportDate>2024-11-20</reports.ReportDate>
+            <reports.Details status="Completed">
+                <Description>Maintenance performed for vehicle Car001</Description>
+                <CustomerID>U001</CustomerID>
+                <BookingID>001</BookingID>
+                <CarID>001</CarID>
+            </reports.Details>
+        </MaintenanceReport>
 
-    <FeedbackReport reportID="RPT002">
-        <reports.ReportDate>22-11-2024</reports.ReportDate>
-        <reports.ReportType>Feedback</reports.ReportType>
-        <reports.Details status="Pending">
-            <Description>Customer feedback report (comment)</Description>
-            <CustomerID>CUST123</CustomerID>
-            <BookingID>BOOK123</BookingID>
-            <CarID>CAR123</CarID>
-        </reports.Details>
-        <FeedbackReport.rating>Customer rating of service(5)</FeedbackReport.rating>
-        <FeedbackReport.comment>Great service!</FeedbackReport.comment>
-    </FeedbackReport>
+        <FeedbackReport reportID="FR001">
+            <reports.ReportType>Feedback</reports.ReportType>
+            <reports.ReportDate>2024-11-22</reports.ReportDate>
+            <reports.Details status="Completed">
+                <Description>Feedback from customer</Description>
+                <CustomerID>U001</CustomerID>
+                <BookingID>001</BookingID>
+                <CarID>001</CarID>
+            </reports.Details>
+            <Rating>5</Rating>
+            <Comment>Excellent service!</Comment>
+        </FeedbackReport>
 
-    <PaymentReport reportID="PAY001">
-        <reports.ReportDate>14-11-2024</reports.ReportDate>
-        <reports.ReportType>Payment</reports.ReportType>
-        <reports.Details status="Completed">
-            <Description>Payment processing for booking</Description>
-            <CustomerID>CUST001</CustomerID>
-            <BookingID>BOOK001</BookingID>
-            <CarID>CAR001</CarID>
-        </reports.Details>
-        <PaymentReport.Amount>150.00</PaymentReport.Amount>
-        <PaymentReport.Method>Credit Card</PaymentReport.Method>
-    </PaymentReport>
+        <InvoiceReport reportID="IR001">
+            <reports.ReportDate>2024-11-21</reports.ReportDate>
+            <reports.ReportType>Invoice</reports.ReportType>
+            <reports.Details status="Completed">
+                <Description>Invoice generated</Description>
+                <CustomerID>U001</CustomerID>
+                <BookingID>001</BookingID>
+                <CarID>001</CarID>
+            </reports.Details>
+            <InvoiceID>IR001</InvoiceID>
+            <TotalAmount>150.00</TotalAmount>
+        </InvoiceReport>
+        
+        <PaymentReport reportID="PR001">
+            <reports.ReportDate>2024-11-21</reports.ReportDate>
+            <reports.ReportType>Payment</reports.ReportType>
+            <reports.Details status="Completed">
+                <Description>Payment processed</Description>
+                <CustomerID>U001</CustomerID>
+                <BookingID>001</BookingID>
+                <CarID>001</CarID>
+            </reports.Details>
+            <Amount>150.00</Amount>
+            <Method>Credit Card</Method>
+        </PaymentReport>
+    </reports>
 
-    <InvoiceReport reportID="INV001">
-        <reports.ReportDate>14-11-2024</reports.ReportDate>
-        <reports.ReportType>Invoice</reports.ReportType>
-        <reports.Details status="Completed">
-            <Description>Invoice generated for booking</Description>
-            <CustomerID>CUST001</CustomerID>
-            <BookingID>BOOK001</BookingID>
-            <CarID>CAR001</CarID>
-        </reports.Details>
-        <InvoiceReport.InvoiceID>INV001</InvoiceReport.InvoiceID>
-        <InvoiceReport.TotalAmount>150.00</InvoiceReport.TotalAmount>
-    </InvoiceReport>
-
-    <NotificationReport reportID="NOT001">
-        <reports.ReportDate>14-11-2024</reports.ReportDate>
-        <reports.ReportType>Notification</reports.ReportType>
-        <reports.Details status="Pending">
-            <Description>Notification message sent to customer</Description>
-            <CustomerID>CUST001</CustomerID>
-            <BookingID>BOOK001</BookingID>
-            <CarID>CAR001</CarID>
-        </reports.Details>
-        <NotificationReport.Message>Your booking has been confirmed.</NotificationReport.Message>
-        <NotificationReport.Target>Email</NotificationReport.Target>
-    </NotificationReport>
-
-</reports>
+    <reports bookingID="BOOK002">
+        <MaintenanceReport reportID="MR002">
+            <reports.ReportType>Maintenance</reports.ReportType>
+            <reports.ReportDate>2024-12-01</reports.ReportDate>
+            <reports.Details status="Pending">
+                <Description>Routine maintenance for vehicle Car002</Description>
+                <CustomerID>456</CustomerID>
+                <BookingID>623</BookingID>
+                <CarID>002</CarID>
+            </reports.Details>
+        </MaintenanceReport>
+    
+        <FeedbackReport reportID="FR002">
+            <reports.ReportType>Feedback</reports.ReportType>
+            <reports.ReportDate>2024-12-15</reports.ReportDate>
+            <reports.Details status="Completed">
+                <Description>Feedback from customer</Description>
+                <CustomerID>456</CustomerID>
+                <BookingID>623</BookingID>
+                <CarID>002</CarID>
+            </reports.Details>
+            <Rating>4</Rating>
+            <Comment>Service was satisfactory but could be improved.</Comment>
+        </FeedbackReport>
+    </reports>
+</Report>
