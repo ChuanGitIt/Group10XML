@@ -89,13 +89,13 @@
         </PaymentReport>
     </reports>
 
-    <reports bookingID="BOOK002">
+    <reports bookingID="623">
         <MaintenanceReport reportID="MR002">
             <reports.ReportType>Maintenance</reports.ReportType>
             <reports.ReportDate>2024-12-01</reports.ReportDate>
             <reports.Details status="Pending">
                 <Description>Routine maintenance for vehicle Car002</Description>
-                <CustomerID>456</CustomerID>
+                <CustomerID>U002</CustomerID>
                 <BookingID>623</BookingID>
                 <CarID>002</CarID>
             </reports.Details>
@@ -106,7 +106,7 @@
             <reports.ReportDate>2024-12-15</reports.ReportDate>
             <reports.Details status="Completed">
                 <Description>Feedback from customer</Description>
-                <CustomerID>456</CustomerID>
+                <CustomerID>U002</CustomerID>
                 <BookingID>623</BookingID>
                 <CarID>002</CarID>
             </reports.Details>

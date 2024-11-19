@@ -33,7 +33,61 @@
       <customer.driversLicenseNumber>LN123</customer.driversLicenseNumber>
       <customer.driverAge>21</customer.driverAge>
       <Driver.carKey>key</Driver.carKey>
-   
    </Driver>
+   
+    <Driver CustomerID="U002">
+        <customer.name>
+            <firstname>Emily</firstname>
+            <firstname>Rose</firstname>
+            <surname>Johnson</surname>
+        </customer.name>
+        <customer.email>emily.johnson@example.com</customer.email>
+        <customer.password>securepassword456</customer.password>
+        <customer.phone>+353987654321</customer.phone>
+        <customer.driversLicenseNumber>LN567</customer.driversLicenseNumber>
+        <customer.driverAge>28</customer.driverAge>
+        <Driver.carKey>key567</Driver.carKey>
+    </Driver>
+
+    <Driver CustomerID="U003">
+        <customer.name>
+            <firstname>Liam</firstname>
+            <surname>O'Connor</surname>
+        </customer.name>
+        <customer.email>liam.oconnor@example.com</customer.email>
+        <customer.password>liampassword789</customer.password>
+        <customer.phone>+353456789123</customer.phone>
+        <customer.driversLicenseNumber>LN789</customer.driversLicenseNumber>
+        <customer.driverAge>35</customer.driverAge>
+        <Driver.carKey>key789</Driver.carKey>
+    </Driver>
+
+    <Driver CustomerID="U004">
+        <customer.name>
+            <firstname>Ava</firstname>
+            <firstname>Grace</firstname>
+            <surname>Murphy</surname>
+        </customer.name>
+        <customer.email>ava.murphy@example.com</customer.email>
+        <customer.password>passwordava123</customer.password>
+        <customer.phone>+353789123456</customer.phone>
+        <customer.driversLicenseNumber>LN321</customer.driversLicenseNumber>
+        <customer.driverAge>30</customer.driverAge>
+        <Driver.carKey>key321</Driver.carKey>
+    </Driver>
+
+    <Driver CustomerID="U005">
+        <customer.name>
+            <firstname>Noah</firstname>
+            <firstname>Michael</firstname>
+            <surname>Byrne</surname>
+        </customer.name>
+        <customer.email>noah.byrne@example.com</customer.email>
+        <customer.password>noahsecure123</customer.password>
+        <customer.phone>+353321654987</customer.phone>
+        <customer.driversLicenseNumber>LN654</customer.driversLicenseNumber>
+        <customer.driverAge>40</customer.driverAge>
+        <Driver.carKey>key654</Driver.carKey>
+    </Driver>
 
 </customer>
