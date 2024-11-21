@@ -96,7 +96,7 @@
             <reports.Details status="Pending">
                 <Description>Routine maintenance for vehicle Car002</Description>
                 <CustomerID>U002</CustomerID>
-                <BookingID>623</BookingID>
+                <BookingID>002</BookingID>
                 <CarID>002</CarID>
             </reports.Details>
         </MaintenanceReport>
@@ -107,7 +107,7 @@
             <reports.Details status="Completed">
                 <Description>Feedback from customer</Description>
                 <CustomerID>U002</CustomerID>
-                <BookingID>623</BookingID>
+                <BookingID>002</BookingID>
                 <CarID>002</CarID>
             </reports.Details>
             <Rating>4</Rating>
