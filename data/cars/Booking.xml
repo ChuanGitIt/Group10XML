@@ -23,7 +23,7 @@
     </BookingEntry>
 
     <BookingEntry bookingID="623">
-        <bookingID>623</bookingID>
+        <bookingID>002</bookingID>
         <CustomerID>U002</CustomerID>
         <carID>002</carID>
         <startTime>2024-12-01T09:00:00</startTime>
@@ -55,12 +55,14 @@
     <BookingEntry bookingID="005">
         <bookingID>005</bookingID>
         <CustomerID>U005</CustomerID>
-        <carID>101</carID>
+        <carID>005</carID>
         <startTime>2024-12-29T16:00:00</startTime>
         <endTime>2024-12-29T20:00:00</endTime>
         <cost>250.75</cost>
         <status>Confirmed</status>
     </BookingEntry>
 </Booking>
+
+
 
 
