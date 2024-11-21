@@ -9,35 +9,35 @@
 ]>
 <Payments>
     <Payment paymentID="1234">
-        <bookingID>101</bookingID>
+        <bookingID>001</bookingID>
         <carID>001</carID>
         <date>20/11/24</date>
         <cost>150.00</cost>
         <method>Visa</method>
     </Payment>
     <Payment paymentID="1235">
-        <bookingID>102</bookingID>
+        <bookingID>002</bookingID>
         <carID>002</carID>
         <date>01/12/24</date>
         <cost>200.00</cost>
         <method>MasterCard</method>
     </Payment>
     <Payment paymentID="1236">
-        <bookingID>103</bookingID>
+        <bookingID>003</bookingID>
         <carID>003</carID>
         <date>05/12/24</date>
         <cost>175.50</cost>
         <method>Visa</method>
     </Payment>
     <Payment paymentID="1237">
-        <bookingID>104</bookingID>
+        <bookingID>004</bookingID>
         <carID>004</carID>
         <date>20/12/24</date>
         <cost>120.00</cost>
         <method>Visa</method>
     </Payment>
     <Payment paymentID="1238">
-        <bookingID>105</bookingID>
+        <bookingID>005</bookingID>
         <carID>005</carID>
         <date>29/012/24</date>
         <cost>250.75</cost>
