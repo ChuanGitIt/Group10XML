@@ -1,3 +1,4 @@
+(:for clause, let clause, where clause:)
 declare function local:all_reports() {
     for $booking in doc("Booking.xml")/Booking/BookingEntry
     let $bookingID := $booking/@bookingID

@@ -1,4 +1,4 @@
-
+(:for clause, where clause:)
 declare function local:all_cars()
 {
  for $j in doc("cars.xml")//ClassicCar | doc("cars.xml")//ECar

@@ -1,21 +1,22 @@
+(:for clause:)
 declare function local:getAllBookings() {
-    for $booking in doc("Bookings.xml")/Booking/BookingEntry
+    for $booking in doc("Booking.xml")/Booking/BookingEntry
     return $booking
 };
 
 declare function local:getAllBookingIDs() {
-    for $booking in doc("Bookings.xml")/Booking/BookingEntry
-    return $booking/@bookingID
+    for $booking in doc("Booking.xml")/Booking/BookingEntry 
+    return $booking/bookingID
 };
 
 declare function local:getConfirmedBookings() {
-    for $booking in doc("Bookings.xml")/Booking/BookingEntry
+    for $booking in doc("Booking.xml")/Booking/BookingEntry
     where $booking/status = "Confirmed"
     return $booking
 };
 
-(: 
-local:getAllBookings()
-local:getAllBookingIDs()
-local:getConfirmedBookings()
-:)
+<all>
+{local:getAllBookings()}
+{local:getAllBookingIDs()}
+{local:getConfirmedBookings()}
+</all>

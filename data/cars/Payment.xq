@@ -1,3 +1,4 @@
+(:built-in, for clause:)
 declare function local:all_payments() {
     for $j in doc("Payment.xml")/Payments/Payment
     return 

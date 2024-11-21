@@ -1,4 +1,4 @@
-
+(:built-in, let clause, for clause:)
 declare function local:all_formatted_names() {
     for $driver in doc("customer.xml")/customer/Driver
     let $firstnames := 
@@ -48,7 +48,8 @@ declare function local:driver_under_21() {
     </Driver>
 };
 
-
-(:local:all_formatted_names():)
-(:local:count_drivers():)
-(:local:driver_under_21():)
+<all>
+{local:all_formatted_names()}
+{local:count_drivers()}
+{local:driver_under_21()}
+</all>

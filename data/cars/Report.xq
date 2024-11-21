@@ -1,9 +1,10 @@
+(:for clause, let clause:)
 declare function local:all_reports() {
     for $reportGroup in doc("Report.xml")/Report/reports
     let $bookingID := $reportGroup/@bookingID
     return 
         concat(
-            "Booking ID: ", $bookingID, "&#xA;", (: Newline for booking group header :)
+            "Booking ID: ", $bookingID, "&#xA;",
             string-join(
                 for $report in $reportGroup/*
                 let $reportID := $report/@reportID
@@ -13,11 +14,11 @@ declare function local:all_reports() {
                 return concat(
                     "  ", $reportID, " ", $reportType, " ", 
                     $reportDate, ". ", 
-                    $description, "&#xA;" (: Newline for each report :)
+                    $description, "&#xA;"
                 ),
                 ""
             ),
-            "&#xA;" (: Extra newline to separate booking groups :)
+            "&#xA;"
         )
 };
 

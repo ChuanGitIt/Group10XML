@@ -1,3 +1,4 @@
+(:for clause and where clause:)
 for $booking in doc("Booking.xml")/Booking/BookingEntry,
     $car in doc("cars.xml")//ClassicCar | doc("cars.xml")//ECar,
     $FeedbackReport in doc("Report.xml")//FeedbackReport,

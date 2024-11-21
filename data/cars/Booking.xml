@@ -3,7 +3,8 @@
     <!ELEMENT BookingEntry (CustomerID, carID, startTime, endTime, cost, status)>
     <!ATTLIST BookingEntry bookingID CDATA #REQUIRED>
 
-    <!ELEMENT userID (#PCDATA)>
+    <!ELEMENT CustomerID (#PCDATA)>
+    <!ELEMENT bookingID (#PCDATA)>
     <!ELEMENT carID (#PCDATA)>
     <!ELEMENT startTime (#PCDATA)>
     <!ELEMENT endTime (#PCDATA)>
@@ -22,7 +23,7 @@
         <status>Confirmed</status>
     </BookingEntry>
 
-    <BookingEntry bookingID="623">
+    <BookingEntry bookingID="002">
         <bookingID>002</bookingID>
         <CustomerID>U002</CustomerID>
         <carID>002</carID>
