@@ -1,12 +1,14 @@
-<!DOCTYPE Payment [
-<!ELEMENT Payment (Payment.paymentID, Payment.bookingID, Payment.carID, Payment.date, Payment.cost, Payement.method)>
+<!DOCTYPE Payments [
+<!ELEMENT Payments (Payment+)>
+<!ELEMENT Payment (bookingID, carID, date, cost, method)>
 <!ATTLIST Payment paymentID CDATA #REQUIRED>
-<!ELEMENT Payment.bookingID (#PCDATA)>
-<!ELEMENT Payment.carID (#PCDATA)>
-<!ELEMENT Payment.date (#PCDATA)>
-<!ELEMENT Payment.cost (#PCDATA)>
-<!ELEMENT Payment.method (#PCDATA)>
+<!ELEMENT bookingID (#PCDATA)>
+<!ELEMENT carID (#PCDATA)>
+<!ELEMENT date (#PCDATA)>
+<!ELEMENT cost (#PCDATA)>
+<!ELEMENT method (#PCDATA)>
 ]>
+
 <Payments>
     <Payment paymentID="1234">
         <bookingID>001</bookingID>

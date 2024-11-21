@@ -14,7 +14,6 @@
 
 <Booking>
     <BookingEntry bookingID="001">
-        <bookingID>001</bookingID>
         <CustomerID>U001</CustomerID>
         <carID>001</carID>
         <startTime>2024-11-20T10:00:00</startTime>
@@ -24,7 +23,6 @@
     </BookingEntry>
 
     <BookingEntry bookingID="002">
-        <bookingID>002</bookingID>
         <CustomerID>U002</CustomerID>
         <carID>002</carID>
         <startTime>2024-12-01T09:00:00</startTime>
@@ -34,7 +32,6 @@
     </BookingEntry>
 
     <BookingEntry bookingID="003">
-        <bookingID>003</bookingID>
         <CustomerID>U003</CustomerID>
         <carID>003</carID>
         <startTime>2024-12-05T14:30:00</startTime>
@@ -44,7 +41,6 @@
     </BookingEntry>
 
     <BookingEntry bookingID="004">
-        <bookingID>004</bookingID>
         <CustomerID>U004</CustomerID>
         <carID>004</carID>
         <startTime>2024-12-30T08:00:00</startTime>
@@ -54,7 +50,6 @@
     </BookingEntry>
 
     <BookingEntry bookingID="005">
-        <bookingID>005</bookingID>
         <CustomerID>U005</CustomerID>
         <carID>005</carID>
         <startTime>2024-12-29T16:00:00</startTime>
@@ -63,7 +58,3 @@
         <status>Confirmed</status>
     </BookingEntry>
 </Booking>
-
-
-
-

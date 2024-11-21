@@ -63,10 +63,11 @@ car.status,car.location,car.fuelLevel,car.pricePerDay,ECar.battery,ECar.chargerC
     <car.status>"Great condition, perfect for families"</car.status>
     <car.location> Dublin City Centre </car.location>
     <car.fuelLevel>"2.0T"</car.fuelLevel>
+    <car.pricePerDay>20</car.pricePerDay>
     <ClassicCar.fuel>"Gasoline"</ClassicCar.fuel>
     <ClassicCar.fuelCard>"003"</ClassicCar.fuelCard>
-    <ClassicCar.carPricePerDay>20</ClassicCar.carPricePerDay>
 </ClassicCar>
+
 
 <ClassicCar carID="004">
     <car.types>"Coupe"</car.types>
@@ -77,23 +78,23 @@ car.status,car.location,car.fuelLevel,car.pricePerDay,ECar.battery,ECar.chargerC
     <car.status>"Excellent condition, ideal for two"</car.status>
     <car.location> Trinity </car.location>
     <car.fuelLevel>"1.2T"</car.fuelLevel>
+    <car.pricePerDay>30</car.pricePerDay>
     <ClassicCar.fuel>"Gasoline"</ClassicCar.fuel>
     <ClassicCar.fuelCard>"004"</ClassicCar.fuelCard>
-    <car.pricePerDay>30</car.pricePerDay>
   </ClassicCar>
 
   <ClassicCar carID="005">
-    <car.types>Pickup</car.types>
-    <car.brand>Dodge</car.brand>
-    <car.model>Ram 1500</car.model>
-    <car.licensePlate>RamStrong005</car.licensePlate>
+    <car.types>"Pickup"</car.types>
+    <car.brand>"Dodge"</car.brand>
+    <car.model>"Ram 1500"</car.model>
+    <car.licensePlate>"RamStrong005"</car.licensePlate>
     <car.year>2018</car.year>
-    <car.status>Sturdy and reliable, suitable for heavy loads</car.status>
-    <car.location>Suburbs</car.location>
-    <car.fuelLevel>Three-quarters</car.fuelLevel>
-    <ClassicCar.fuel>Diesel</ClassicCar.fuel>
-    <ClassicCar.fuelCard>005</ClassicCar.fuelCard>
+    <car.status>"Sturdy and reliable, suitable for heavy loads"</car.status>
+    <car.location>"Suburbs"</car.location>
+    <car.fuelLevel>"Three-quarters"</car.fuelLevel>
     <car.pricePerDay>25</car.pricePerDay>
+    <ClassicCar.fuel>"Diesel"</ClassicCar.fuel>
+    <ClassicCar.fuelCard>"005"</ClassicCar.fuelCard>
   </ClassicCar>
 
 <ECar carID = "101">

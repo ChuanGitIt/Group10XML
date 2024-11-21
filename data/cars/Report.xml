@@ -1,7 +1,7 @@
 <!DOCTYPE Report [
-  <!ELEMENT Report (reports)>
+  <!ELEMENT Report (reports+)>
 
-  <!ELEMENT reports (MaintenanceReport?, FeedbackReport?, PaymentReport?, InvoiceReport?)>
+  <!ELEMENT reports (MaintenanceReport?, FeedbackReport?, InvoiceReport?, PaymentReport?)*>
   <!ATTLIST reports bookingID CDATA #REQUIRED>
 
   <!ELEMENT MaintenanceReport (reports.ReportDate, reports.ReportType, reports.Details)>
@@ -39,8 +39,8 @@
 <Report>    
     <reports bookingID="001">
         <MaintenanceReport reportID="MR001">
-            <reports.ReportType>Maintenance</reports.ReportType>
             <reports.ReportDate>2024-11-20</reports.ReportDate>
+            <reports.ReportType>Maintenance</reports.ReportType>
             <reports.Details status="Completed">
                 <Description>Maintenance performed for vehicle Car001</Description>
                 <CustomerID>U001</CustomerID>
@@ -50,8 +50,8 @@
         </MaintenanceReport>
 
         <FeedbackReport reportID="FR001">
-            <reports.ReportType>Feedback</reports.ReportType>
             <reports.ReportDate>2024-11-22</reports.ReportDate>
+            <reports.ReportType>Feedback</reports.ReportType>
             <reports.Details status="Completed">
                 <Description>Feedback from customer</Description>
                 <CustomerID>U001</CustomerID>
@@ -91,8 +91,8 @@
 
     <reports bookingID="002">
         <MaintenanceReport reportID="MR002">
-            <reports.ReportType>Maintenance</reports.ReportType>
             <reports.ReportDate>2024-12-01</reports.ReportDate>
+            <reports.ReportType>Maintenance</reports.ReportType>
             <reports.Details status="Pending">
                 <Description>Routine maintenance for vehicle Car002</Description>
                 <CustomerID>U002</CustomerID>
@@ -102,8 +102,8 @@
         </MaintenanceReport>
     
         <FeedbackReport reportID="FR002">
-            <reports.ReportType>Feedback</reports.ReportType>
             <reports.ReportDate>2024-12-15</reports.ReportDate>
+            <reports.ReportType>Feedback</reports.ReportType>
             <reports.Details status="Completed">
                 <Description>Feedback from customer</Description>
                 <CustomerID>U002</CustomerID>
@@ -114,4 +114,35 @@
             <Comment>Service was satisfactory but could be improved.</Comment>
         </FeedbackReport>
     </reports>
+
+
+    <reports bookingID="003">
+        <InvoiceReport reportID="IR003">
+            <reports.ReportDate>2024-12-04</reports.ReportDate>
+            <reports.ReportType>Invoice</reports.ReportType>
+            <reports.Details status="Completed">
+                <Description>Invoice generated</Description>
+                <CustomerID>U003</CustomerID>
+                <BookingID>003</BookingID>
+                <CarID>003</CarID>
+            </reports.Details>
+            <InvoiceID>IR003</InvoiceID>
+            <TotalAmount>175.50</TotalAmount>
+        </InvoiceReport>
+        
+        <PaymentReport reportID="PR003">
+            <reports.ReportDate>2024-12-05</reports.ReportDate>
+            <reports.ReportType>Payment</reports.ReportType>
+            <reports.Details status="Completed">
+                <Description>Payment processed</Description>
+                <CustomerID>U003</CustomerID>
+                <BookingID>003</BookingID>
+                <CarID>003</CarID>
+            </reports.Details>
+            <Amount>175.50</Amount>
+            <Method>Visa</Method>
+        </PaymentReport>
+
+    </reports>
 </Report>
+
