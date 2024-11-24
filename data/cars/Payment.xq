@@ -9,9 +9,9 @@ declare function local:all_payments() {
     </Payment>
 };
 
-declare function local:Payments_Over_100() {
+declare function local:Payments_Over_150() {
     for $Payment in doc("Payment.xml")/Payments/Payment
-    where xs:decimal($Payment/cost) > 100.00
+    where xs:decimal($Payment/cost) > 150.00
     return 
     <Payment>
         {string($Payment/@paymentID), " "}
@@ -23,5 +23,5 @@ declare function local:Payments_Over_100() {
 
 <all>
 {local:all_payments()}
-{local:Payments_Over_100()}
+{local:Payments_Over_150()}
 </all>
