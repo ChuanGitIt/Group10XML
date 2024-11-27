@@ -1,8 +1,16 @@
-<!DOCTYPE Booking [
-    <!ELEMENT Booking (BookingEntry+)>
-    <!ELEMENT BookingEntry (CustomerID, carID, startTime, endTime, cost, status)>
-    <!ATTLIST BookingEntry bookingID CDATA #REQUIRED>
+<!-- The xml document for Booking contains information about bookings. 
+Each booking entry gives a booking  ID,   customer ID,  car ID, start time 
+of the booking, end time of the booking, the cost of the booking and the status 
+of the booking (Pending, Confirmed, Cancelled etc.) -->
 
+<!DOCTYPE Booking [
+    <!ELEMENT Booking (BookingEntry+)>  <!-- The Booking element has to contain at 
+least one or more BookingEntry elements -->
+    <!ELEMENT BookingEntry (CustomerID, carID, startTime, endTime, cost, status)>
+    <!-- each BookingEntry must have a bookingID attribute -->
+    <!ATTLIST BookingEntry bookingID CDATA #REQUIRED> 
+
+    <!-- Simple elements representing details of the booking -->
     <!ELEMENT CustomerID (#PCDATA)>
     <!ELEMENT bookingID (#PCDATA)>
     <!ELEMENT carID (#PCDATA)>
