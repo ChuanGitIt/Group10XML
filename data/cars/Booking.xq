@@ -1,22 +1,32 @@
-(:for clause:)
-declare function local:getAllBookings() {
-    for $booking in doc("Booking.xml")/Booking/BookingEntry
-    return $booking
-};
-
-declare function local:getAllBookingIDs() {
-    for $booking in doc("Booking.xml")/Booking/BookingEntry 
-    return $booking/bookingID
-};
-
-declare function local:getConfirmedBookings() {
-    for $booking in doc("Booking.xml")/Booking/BookingEntry
-    where $booking/status = "Confirmed"
-    return $booking
-};
-
-<all>
-{local:getAllBookings()}
-{local:getAllBookingIDs()}
-{local:getConfirmedBookings()}
-</all>
+let $allBookings := doc("Booking.xml")//BookingEntry
+return
+<Results>
+    <AllBookings>
+        {
+            for $entry in $allBookings
+            let $details := fn:string-join((
+                "Booking ID:", $entry/@bookingID,
+                "User ID:", $entry/userID,
+                "Cost:", $entry/cost,
+                "Status:", $entry/status
+            ), " ")
+            return <Booking>{$details}</Booking>
+        }
+    </AllBookings>
+    
+    <FilteredBookings>
+        {
+            for $entry in $allBookings
+            let $cost := xs:decimal($entry/cost)
+            let $status := $entry/status
+            where $cost < 150 and $status = "Completed"
+            let $details := fn:string-join((
+                "Booking ID:", $entry/@bookingID,
+                "User ID:", $entry/userID,
+                "Cost:", $entry/cost,
+                "Status:", $entry/status
+            ), " ")
+            return <Booking>{$details}</Booking>
+        }
+    </FilteredBookings>
+</Results>
